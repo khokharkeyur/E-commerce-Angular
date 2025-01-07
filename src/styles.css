@@ -1,5 +1,62 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.comman-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-input {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #555;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.form-button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.form-button:active {
+  transform: translateY(0);
+}
+
+@media screen and (max-width: 480px) {
+  .seller-auth {
+    padding: 15px;
+  }
+
+  .signUp h1 {
+    font-size: 20px;
+  }
+
+  .form-input,
+  .form-button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
 }
