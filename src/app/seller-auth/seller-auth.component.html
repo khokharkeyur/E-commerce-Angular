@@ -1,4 +1,5 @@
 <div class="seller-container">
+    @if(!showLogin){
     <div class="seller-auth">
         <div class="signUp">
             <h1>Seller Sign-Up</h1>
@@ -7,7 +8,23 @@
                 <input class="form-input" type="text" name="email" ngModel placeholder="Enter Email">
                 <input class="form-input" type="password" name="password" ngModel placeholder="Enter password">
                 <button class="form-button">signUp</button>
+                <a class="auth-toggle-link" (click)="openLogin()">Alraedy Have Account? Click to Login</a>
             </form>
         </div>
     </div>
+    }
+    <!-- Login -->
+    @else{
+    <div class="seller-auth">
+        <div class="login">
+            <h1>Seller Login</h1>
+            <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)" class="comman-form">
+                <input class="form-input" type="text" name="email" ngModel placeholder="Enter Email">
+                <input class="form-input" type="password" name="password" ngModel placeholder="Enter password">
+                <button class="form-button">Login</button>
+                <a class="auth-toggle-link" (click)="openLogin()">Don't Have Account? Click to Sign-Up</a>
+            </form>
+        </div>
+    </div>
+    }
 </div>

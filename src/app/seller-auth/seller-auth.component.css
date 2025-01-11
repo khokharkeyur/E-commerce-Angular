@@ -14,11 +14,25 @@
   box-sizing: border-box;
 }
 
-.signUp h1 {
+.signUp h1, .login h1 {
   text-align: center;
   color: #333333;
   font-size: 24px;
   margin-bottom: 20px;
+}
+.auth-toggle-link {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+.auth-toggle-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 480px) {

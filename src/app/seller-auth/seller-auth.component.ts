@@ -11,10 +11,17 @@ import { SignUP } from '../interfases';
 })
 export class SellerAuthComponent {
   constructor(private seller: SellerService) {}
-  ngOnInit():void {
+  showLogin: boolean = false;
+  ngOnInit(): void {
     this.seller.reloadSeller();
   }
   signUp(data: SignUP): void {
-    this.seller.userSignUp(data)
+    this.seller.userSignUp(data);
+  }
+  login(data: SignUP): void {
+    this.seller.userSignUp(data);
+  }
+  openLogin(): void {
+    this.showLogin = !this.showLogin;
   }
 }
