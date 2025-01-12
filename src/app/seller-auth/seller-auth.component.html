@@ -18,6 +18,9 @@
     <div class="seller-auth">
         <div class="login">
             <h1>Seller Login</h1>
+            @if(authError){
+            <p class="error-message">{{authError}}</p>
+            }
             <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)" class="comman-form">
                 <input class="form-input" type="text" name="email" ngModel placeholder="Enter Email">
                 <input class="form-input" type="password" name="password" ngModel placeholder="Enter password">

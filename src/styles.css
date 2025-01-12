@@ -45,6 +45,10 @@
   transform: translateY(0);
 }
 
+.error-message {
+  color: red;
+}
+
 @media screen and (max-width: 480px) {
   .seller-auth {
     padding: 15px;

@@ -1,3 +1,4 @@
+import { Login } from './../interfases';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SellerService } from '../services/seller.service';
@@ -12,6 +13,7 @@ import { SignUP } from '../interfases';
 export class SellerAuthComponent {
   constructor(private seller: SellerService) {}
   showLogin: boolean = false;
+  authError: string | boolean = false;
   ngOnInit(): void {
     this.seller.reloadSeller();
   }
@@ -19,7 +21,14 @@ export class SellerAuthComponent {
     this.seller.userSignUp(data);
   }
   login(data: SignUP): void {
-    this.seller.userSignUp(data);
+    this.authError = "";
+    this.seller.userLogin(data);
+    this.seller.isLoginError.subscribe((error)=>{
+      if (error) {
+        console.log("called");
+        this.authError = "Email or Password is not correct";
+      }
+    })
   }
   openLogin(): void {
     this.showLogin = !this.showLogin;
