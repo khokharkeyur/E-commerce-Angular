@@ -68,6 +68,7 @@ button {
   text-decoration: none;
   color: white;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
 .nav ul li a:hover {
