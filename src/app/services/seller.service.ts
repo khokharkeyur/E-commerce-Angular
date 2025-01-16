@@ -35,7 +35,6 @@ export class SellerService {
         { observe: 'response' }
       )
       .subscribe((response: any) => {
-        console.log(response);
         if (response && response?.body && response?.body?.length) {
           localStorage.setItem('seller', JSON.stringify(response.body));
           this.router.navigate(['/seller-home']);
