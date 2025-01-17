@@ -26,5 +26,14 @@
     }
   ],
   "products": [
+    {
+      "id": "2679",
+      "name": "oppo",
+      "price": "12000",
+      "color": "black",
+      "category": "mobile",
+      "image": "https://opsg-img-cdn-gl.heytapimg.com/epb/202407/25/CxzQzFb5VTKGtlT7.png",
+      "description": "good product for anyone\n"
+    }
   ]
 }

@@ -8,6 +8,9 @@ import { Product } from '../interfases';
 export class ProductService {
   constructor(private http: HttpClient) {}
   addProduct(data: Product) {
-   return this.http.post('http://localhost:3000/products',data);
+    return this.http.post('http://localhost:3000/products', data);
+  }
+  productList() {
+    return this.http.get<Product[]>('http://localhost:3000/products');
   }
 }
