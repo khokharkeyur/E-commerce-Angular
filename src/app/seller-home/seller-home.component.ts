@@ -10,11 +10,29 @@ import { Product } from '../interfases';
 })
 export class SellerHomeComponent {
   productList: Product[] | undefined;
+  productMessage: string | undefined;
   product = inject(ProductService);
   ngOnInit(): void {
+    this.featchProductData();
+  }
+
+  featchProductData() {
     this.product.productList().subscribe((response) => {
-      console.log('response', response);
-      this.productList = response;
+      if (response) {
+        this.productList = response;
+      }
+    });
+  }
+
+  deleteProduct(id: string) {
+    this.product.deleteProduct(id).subscribe((response) => {
+      if (response) {
+        this.productMessage = 'Product is deleted';
+        this.featchProductData();
+      }
+      setTimeout(() => {
+        this.productMessage = '';
+      }, 3000);
     });
   }
 }
