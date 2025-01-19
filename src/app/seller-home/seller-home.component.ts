@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Product } from '../interfases';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-seller-home',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './seller-home.component.html',
   styleUrl: './seller-home.component.css',
 })

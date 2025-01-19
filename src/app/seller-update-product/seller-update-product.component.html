@@ -1,0 +1,17 @@
+<div class="seller-update-container">
+    <div class="seller-update-product">
+        <h1>Update New Product</h1>
+        <!-- <p class="message-p">{{updateProductMessage}}</p> -->
+        <form #updateProduct="ngForm" (ngSubmit)="updateProductSubmit(updateProduct.value)" class="comman-form">
+            <input class="form-input" type="text" name="name" ngModel placeholder="Enter Product Name">
+            <input class="form-input" type="text" name="price" ngModel placeholder="Enter Product Price">
+            <input class="form-input" type="text" name="color" ngModel placeholder="Enter Product Color">
+            <input class="form-input" type="text" name="category" ngModel placeholder="Enter Product Category">
+            <input class="form-input" type="text" name="image" ngModel placeholder="Enter Product Image URL">
+            <textarea class="form-input" type="text" name="description" ngModel
+                placeholder="Enter Product Description"></textarea>
+            <button class="form-button">Update Product</button>
+
+        </form>
+    </div>  
+</div>
