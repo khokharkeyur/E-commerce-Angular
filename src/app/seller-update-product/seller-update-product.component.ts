@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { Product } from '../interfases';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -13,6 +13,7 @@ import { ProductService } from '../services/product.service';
 export class SellerUpdateProductComponent {
   route = inject(ActivatedRoute);
   product = inject(ProductService);
+  routeNavigation = inject(Router);
   productData: Product | undefined;
   ngOnInit(): void {
     let productId = this.route.snapshot.paramMap.get('id');
@@ -24,5 +25,14 @@ export class SellerUpdateProductComponent {
     }
   }
 
-  updateProductSubmit(data: Product) {}
+  updateProductSubmit(data: Product) {
+    if (this.productData) {
+      data.id = this.productData.id
+    }
+    this.product.updateProduct(data).subscribe((response) => {
+      if (response) {
+        this.routeNavigation.navigate(['/seller-home']);
+      }
+    });
+  }
 }
