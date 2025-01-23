@@ -1,0 +1,66 @@
+.custom-carousel {
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .picsum-img-wrapper {
+    position: relative;
+    height: 89.8vh;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .picsum-img-wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-caption.custom-caption {
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    max-width: 80%;
+  }
+  
+  .carousel-caption.custom-caption h3 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .carousel-caption.custom-caption p {
+    font-size: 16px;
+    margin: 5px 0 0;
+  }
+  
+  .ngb-carousel .carousel-indicators [ngbSlide] {
+    background-color: #fff;
+    border-radius: 50%;
+  }
+  
+  .ngb-carousel .carousel-control-prev,
+  .ngb-carousel .carousel-control-next {
+    color: #000;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

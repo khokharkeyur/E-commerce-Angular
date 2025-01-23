@@ -1,5 +1,7 @@
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ProductService } from '../services/product.service';
+import { Product } from '../interfases';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +10,13 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
+  Product = inject(ProductService);
+  popularProductList: Product[] | undefined;
+  ngOnInit(): void {
+    this.Product.popularProduct().subscribe((response) => {
+      if (response) {
+        this.popularProductList = response;
+  }
+})}
   images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
 }

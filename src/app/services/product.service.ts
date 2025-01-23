@@ -22,4 +22,7 @@ export class ProductService {
   updateProduct(product: Product) {
     return this.http.put<Product>(`http://localhost:3000/products/${product.id}`,product);
   }
+  popularProduct() {
+    return this.http.get<Product[]>('http://localhost:3000/products?_sort=rating&_order=desc&_limit=4');
+  }
 }
