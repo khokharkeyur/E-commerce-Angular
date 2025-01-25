@@ -23,6 +23,9 @@ export class ProductService {
     return this.http.put<Product>(`http://localhost:3000/products/${product.id}`,product);
   }
   popularProduct() {
-    return this.http.get<Product[]>('http://localhost:3000/products?_sort=rating&_order=desc&_limit=4');
+    return this.http.get<Product[]>('http://localhost:3000/products?_sort=rating&_order=desc&_limit=3');
+  }
+  Tranding() {
+    return this.http.get<Product[]>('http://localhost:3000/products?_sort=rating&_order=desc&_limit=8');
   }
 }
