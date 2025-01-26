@@ -45,33 +45,6 @@
       "description": "product"
     },
     {
-      "name": "vivo",
-      "price": "20000",
-      "color": "blue",
-      "category": "mobile",
-      "image": "https://images.unsplash.com/photo-1507955987999-df4864ee80d4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBob25lfGVufDB8fDB8fHww",
-      "description": "product",
-      "id": "63ec"
-    },
-    {
-      "id": "97b3",
-      "name": "a12",
-      "price": "20000",
-      "color": "black",
-      "category": "mobile",
-      "image": "https://opsg-img-cdn-gl.heytapimg.com/epb/202407/25/CxzQzFb5VTKGtlT7.png",
-      "description": "good product"
-    },
-    {
-      "id": "42b7",
-      "name": "a12",
-      "price": "20000",
-      "color": "black",
-      "category": "mobile",
-      "image": "https://opsg-img-cdn-gl.heytapimg.com/epb/202407/25/CxzQzFb5VTKGtlT7.png",
-      "description": "good product"
-    },
-    {
       "id": "7932",
       "name": "a12",
       "price": "20000",
@@ -79,6 +52,33 @@
       "category": "mobile",
       "image": "https://opsg-img-cdn-gl.heytapimg.com/epb/202407/25/CxzQzFb5VTKGtlT7.png",
       "description": "good product"
+    },
+    {
+      "id": "b186",
+      "name": "book",
+      "price": "200",
+      "color": "red",
+      "category": "book",
+      "image": "https://media.istockphoto.com/id/173015527/photo/a-single-red-book-on-a-white-surface.jpg?s=612x612&w=0&k=20&c=AeKmdZvg2_bRY2Yct7odWhZXav8CgDtLMc_5_pjSItY=",
+      "description": "books"
+    },
+    {
+      "id": "9df2",
+      "name": "pen",
+      "price": "10",
+      "color": "blue",
+      "category": "pens",
+      "image": "https://images.unsplash.com/photo-1507955987999-df4864ee80d4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBob25lfGVufDB8fDB8fHww",
+      "description": "goods pens"
+    },
+    {
+      "id": "2805",
+      "name": "pen",
+      "price": "10",
+      "color": "blue",
+      "category": "pens",
+      "image": "https://images.unsplash.com/photo-1507955987999-df4864ee80d4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBob25lfGVufDB8fDB8fHww",
+      "description": "goods pens"
     }
   ]
 }

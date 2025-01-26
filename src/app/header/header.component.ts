@@ -36,14 +36,23 @@ export class HeaderComponent {
   searchProduct(query: KeyboardEvent) {
     if (query) {
       const element = query.target as HTMLInputElement;
-      this.product.SearchProduct(element.value).subscribe((data) => {
-        if (data.length > 5) {
-          data.length = 5;
-        }
-        this.searchResult = data;
-      });
+      const queryText = element.value.trim();
+      if (queryText.length > 0) {
+        this.product.SearchProduct(queryText).subscribe((data) => {
+          this.searchResult = data.filter(product =>
+            product.name.toLowerCase().includes(queryText.toLowerCase())
+          );
+  
+          if (this.searchResult.length > 5) {
+            this.searchResult.length = 5;
+          }
+        });
+      } else {
+        this.searchResult = [];
+      }
     }
   }
+  
   hideSearch() {
     this.searchResult = [];
   }
