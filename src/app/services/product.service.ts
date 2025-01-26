@@ -28,4 +28,7 @@ export class ProductService {
   Tranding() {
     return this.http.get<Product[]>('http://localhost:3000/products?_sort=rating&_order=desc&_limit=8');
   }
+  SearchProduct(query: string) {
+    return this.http.get<Product[]>(`http://localhost:3000/products?q=${query}`);
+  }
 }
