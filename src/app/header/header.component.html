@@ -2,8 +2,10 @@
     <h1 routerLink="/">E-Comm</h1>
     @if(menuType ==='default') {
     <div>
-        <input type="text" (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="Search For Product" />
-        <button>Search</button>
+        <input
+        #searchInput
+        type="text" (keyup)="searchProduct($event)" (blur)="hideSearch()" placeholder="Search For Product" />
+        <button (click)="submitSearch(searchInput.value)">Search</button>
         <ul class="search-result" *ngIf="searchResult">
             <li *ngFor="let product of searchResult;">
               <p>{{product.name}}</p>

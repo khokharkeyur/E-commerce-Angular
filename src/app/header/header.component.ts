@@ -56,4 +56,7 @@ export class HeaderComponent {
   hideSearch() {
     this.searchResult = [];
   }
+  submitSearch(query: string) {
+    this.router.navigate([`/search/${query}`]);
+  }
 }
