@@ -39,10 +39,10 @@ export class HeaderComponent {
       const queryText = element.value.trim();
       if (queryText.length > 0) {
         this.product.SearchProduct(queryText).subscribe((data) => {
-          this.searchResult = data.filter(product =>
+          this.searchResult = data.filter((product) =>
             product.name.toLowerCase().includes(queryText.toLowerCase())
           );
-  
+
           if (this.searchResult.length > 5) {
             this.searchResult.length = 5;
           }
@@ -52,7 +52,7 @@ export class HeaderComponent {
       }
     }
   }
-  
+
   hideSearch() {
     this.searchResult = [];
   }

@@ -20,15 +20,24 @@ export class ProductService {
     return this.http.get<Product>(`http://localhost:3000/products/${id}`);
   }
   updateProduct(product: Product) {
-    return this.http.put<Product>(`http://localhost:3000/products/${product.id}`,product);
+    return this.http.put<Product>(
+      `http://localhost:3000/products/${product.id}`,
+      product
+    );
   }
   popularProduct() {
-    return this.http.get<Product[]>('http://localhost:3000/products?_sort=rating&_order=desc&_limit=3');
+    return this.http.get<Product[]>(
+      'http://localhost:3000/products?_sort=rating&_order=desc&_limit=3'
+    );
   }
   Tranding() {
-    return this.http.get<Product[]>('http://localhost:3000/products?_sort=rating&_order=desc&_limit=8');
+    return this.http.get<Product[]>(
+      'http://localhost:3000/products?_sort=rating&_order=desc&_limit=8'
+    );
   }
   SearchProduct(query: string) {
-    return this.http.get<Product[]>(`http://localhost:3000/products?q=${query}`);
+    return this.http.get<Product[]>(
+      `http://localhost:3000/products?q=${query}`
+    );
   }
 }

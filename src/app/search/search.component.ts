@@ -18,10 +18,11 @@ export class SearchComponent {
 
   ngOnInit(): void {
     let query = this.activeRoute.snapshot.paramMap.get('query');
-    console.warn(query);
     query &&
       this.product.SearchProduct(query).subscribe((result) => {
-        this.searchResult = result;
+        this.searchResult = result.filter(product =>
+          product.name.toLowerCase().includes(query.toLowerCase())
+        );
       });
   }
 }
