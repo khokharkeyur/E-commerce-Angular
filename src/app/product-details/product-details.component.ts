@@ -20,6 +20,7 @@ export class ProductDetailsComponent {
     productId &&
       this.product.getProduct(productId).subscribe((result) => {
         console.log('result', result);
+        this.productData = result;
       });
   }
 }
