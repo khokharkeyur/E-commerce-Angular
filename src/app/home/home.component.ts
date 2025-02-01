@@ -2,10 +2,11 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { Component, inject } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Product } from '../interfases';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [NgbCarouselModule],
+  imports: [NgbCarouselModule,RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

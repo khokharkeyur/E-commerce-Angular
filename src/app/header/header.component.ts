@@ -59,4 +59,8 @@ export class HeaderComponent {
   submitSearch(query: string) {
     this.router.navigate([`/search/${query}`]);
   }
+  redirectToDetails(productId: string) {
+    console.log('productId', productId)
+    this.router.navigate([`/details/${productId}`]);
+  }
 }

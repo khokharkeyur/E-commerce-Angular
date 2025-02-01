@@ -11,6 +11,7 @@ import { Product } from '../interfases';
 })
 export class ProductDetailsComponent {
   productData: undefined | Product;
+  productQuantity: number = 1;
 
   activeRoute = inject(ActivatedRoute);
   product = inject(ProductService);
@@ -22,5 +23,13 @@ export class ProductDetailsComponent {
         console.log('result', result);
         this.productData = result;
       });
+  }
+  handleQuantity(value: string): void {
+    if (this.productQuantity < 20 && value === 'plus') {
+      this.productQuantity++;
+      
+    } else if (this.productQuantity > 1 && value === 'min') {
+      this.productQuantity--;
+    }
   }
 }
