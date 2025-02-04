@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SignUP } from '../interfases';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-auth',
@@ -10,8 +11,10 @@ import { SignUP } from '../interfases';
 })
 export class UserAuthComponent {
 
+  user = inject(UserService)
+
   signUp(data:SignUP) {
-    console.log('data', data)
+    this.user.userSignUp(data)
   }
 
 }

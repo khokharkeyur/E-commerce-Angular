@@ -80,5 +80,25 @@
       "image": "https://images.unsplash.com/photo-1507955987999-df4864ee80d4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBob25lfGVufDB8fDB8fHww",
       "description": "goods pens"
     }
+  ],
+  "user": [
+    {
+      "id": "81a8",
+      "name": "jayes",
+      "email": "jayes123",
+      "password": "jayes123"
+    },
+    {
+      "id": "b5cb",
+      "name": "mayur",
+      "email": "mayur123",
+      "password": "mayur123"
+    },
+    {
+      "id": "1beb",
+      "name": "khokhar keyur",
+      "email": "keyur@123",
+      "password": "keyut@123"
+    }
   ]
 }
