@@ -10,13 +10,19 @@ export class UserService {
   constructor(private http: HttpClient, private router: Router) {}
   userSignUp(user: SignUP) {
     console.log('user', user);
-    this.http.post('http://localhost:3000/user', user, { observe: 'response' }).subscribe
-    ((response) => {
-      console.log('response', response);
-      if (response) {
-        localStorage.setItem('user', JSON.stringify(response.body));
-        this.router.navigate(['/']);
-      }
-    });
+    this.http
+      .post('http://localhost:3000/user', user, { observe: 'response' })
+      .subscribe((response) => {
+        console.log('response', response);
+        if (response) {
+          localStorage.setItem('user', JSON.stringify(response.body));
+          this.router.navigate(['/']);
+        }
+      });
+  }
+  userAuthReaload() {
+    if (localStorage.getItem('user')) {
+      this.router.navigate(['/']);
+    }
   }
 }

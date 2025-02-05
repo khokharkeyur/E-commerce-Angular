@@ -13,6 +13,10 @@ export class UserAuthComponent {
 
   user = inject(UserService)
 
+  ngOnInit() {
+    this.user.userAuthReaload()
+  }
+
   signUp(data:SignUP) {
     this.user.userSignUp(data)
   }

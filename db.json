@@ -99,6 +99,12 @@
       "name": "khokhar keyur",
       "email": "keyur@123",
       "password": "keyut@123"
+    },
+    {
+      "id": "0b92",
+      "name": "jayes",
+      "email": "jayes",
+      "password": "jayes"
     }
   ]
 }

@@ -13,16 +13,22 @@ import { Product } from '../interfases';
 export class HeaderComponent {
   menuType: string = 'default';
   sellerName: string = '';
+  userName: string = '';
   searchResult: Product[] = [];
   constructor(private router: Router, private product: ProductService) {}
   ngOnInit(): void {
     this.router.events.subscribe((value: any) => {
       if (value?.url) {
         if (localStorage.getItem('seller') && value?.url.includes('seller')) {
-          this.menuType = 'seller';
           let sellerStore = localStorage.getItem('seller');
           let sellerData = sellerStore && JSON.parse(sellerStore);
           this.sellerName = sellerData?.name || '';
+          this.menuType = 'seller';
+        }else if(localStorage.getItem('user')) {
+          let userStore = localStorage.getItem('user');
+          let userData = userStore && JSON.parse(userStore);
+          this.userName = userData?.name || '';
+          this.menuType = 'user';
         } else {
           this.menuType = 'default';
         }
@@ -32,6 +38,10 @@ export class HeaderComponent {
   logout() {
     localStorage.removeItem('seller');
     this.router.navigate(['/']);
+  }
+  userLogout() {
+    localStorage.removeItem('user');
+    this.router.navigate(['/user-auth']);
   }
   searchProduct(query: KeyboardEvent) {
     if (query) {
