@@ -10,8 +10,8 @@ import { UserService } from '../services/user.service';
   styleUrl: './user-auth.component.css'
 })
 export class UserAuthComponent {
-
   user = inject(UserService)
+  showLogin: boolean = false
 
   ngOnInit() {
     this.user.userAuthReaload()
@@ -19,6 +19,13 @@ export class UserAuthComponent {
 
   signUp(data:SignUP) {
     this.user.userSignUp(data)
+  }
+
+  login(data:SignUP) {
+    // this.user.userLogin(data)
+  }
+  openLogin() {
+    this.showLogin = !this.showLogin;
   }
 
 }
