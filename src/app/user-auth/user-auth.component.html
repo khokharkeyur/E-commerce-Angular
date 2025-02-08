@@ -1,5 +1,5 @@
 <div class="user-auth">
-    @if(!showLogin) {
+    @if(showLogin) {
     <div class="sign-up">
         <h1>User Signup</h1>
         <form #userSignUp="ngForm" class="common-form" (ngSubmit)="signUp(userSignUp.value)">
