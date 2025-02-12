@@ -11,6 +11,7 @@ import { UserService } from '../services/user.service';
 })
 export class UserAuthComponent {
   user = inject(UserService);
+  authError: string = '';
   showLogin: boolean = false;
 
   ngOnInit() {
@@ -22,8 +23,12 @@ export class UserAuthComponent {
   }
 
   login(data: Login): void {
-    console.log('caiing', data);
     this.user.userLogin(data);
+    this.user.invalidUserAuth.subscribe((response) => {
+      if (response) {
+        this.authError = 'Invalid email or password';
+      }
+    });
   }
 
   openLogin(): void {

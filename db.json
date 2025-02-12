@@ -111,6 +111,18 @@
       "name": "khokhar keyur",
       "email": "keyur@gmail.com",
       "password": "keyur@gmail.com"
+    },
+    {
+      "id": "d4fa",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "86dc",
+      "name": "admin",
+      "email": "admin@123",
+      "password": "admin@123"
     }
   ]
 }

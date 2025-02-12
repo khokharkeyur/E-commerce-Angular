@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Login, SignUP } from '../interfases';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class UserService {
+  invalidUserAuth = new EventEmitter<boolean>();
   constructor(private http: HttpClient, private router: Router) {}
   userSignUp(user: SignUP) {
     console.log('user', user);
@@ -28,16 +29,12 @@ export class UserService {
       )
       .subscribe((response) => {
         console.log('response', response);
-        if (response && response.body) {
+        if (response && response.body?.length) {
+          this.invalidUserAuth.emit(false);
           localStorage.setItem('user', JSON.stringify(response.body[0]));
           this.router.navigate(['/']);
-          // const userFound = response.find(
-          //   (item: any) => item.email === user.email && item.password === user.password
-          // );
-          // if (userFound) {
-          //   localStorage.setItem('user', JSON.stringify(userFound));
-          //   this.router.navigate(['/']);
-          // }
+        } else {
+          this.invalidUserAuth.emit(true);
         }
       });
   }
