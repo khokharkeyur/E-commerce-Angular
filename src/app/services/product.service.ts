@@ -40,4 +40,19 @@ export class ProductService {
       `http://localhost:3000/products?q=${query}`
     );
   }
+  localAddToCart(product: Product) {
+    let cart: Product[] = [];
+
+    if (localStorage.getItem('cart')) {
+      cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    }
+
+    let existingProduct = cart.find((item) => item.id === product.id);
+    if (existingProduct?.quantity && product?.quantity) {
+      existingProduct.quantity +=product.quantity;
+    } else {
+      cart.push(product);
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
 }

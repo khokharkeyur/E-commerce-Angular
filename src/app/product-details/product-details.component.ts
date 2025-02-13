@@ -27,9 +27,16 @@ export class ProductDetailsComponent {
   handleQuantity(value: string): void {
     if (this.productQuantity < 20 && value === 'plus') {
       this.productQuantity++;
-      
     } else if (this.productQuantity > 1 && value === 'min') {
       this.productQuantity--;
+    }
+  }
+  AddToCard() {
+    if (this.productData) {
+      this.productData.quantity = this.productQuantity;
+      if (!localStorage.getItem('user')) {
+        this.product.localAddToCart(this.productData);
+      }
     }
   }
 }
