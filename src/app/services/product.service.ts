@@ -1,11 +1,12 @@
+import { Product } from './../interfases';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Product } from '../interfases';
+import { EventEmitter, Injectable } from '@angular/core'; 
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
+  cardData = new EventEmitter<Product[] | []>();
   constructor(private http: HttpClient) {}
   addProduct(data: Product) {
     return this.http.post('http://localhost:3000/products', data);
@@ -52,7 +53,9 @@ export class ProductService {
       existingProduct.quantity +=product.quantity;
     } else {
       cart.push(product);
+
     }
     localStorage.setItem('cart', JSON.stringify(cart));
+    this.cardData.emit(cart);
   }
 }

@@ -15,6 +15,7 @@ export class HeaderComponent {
   sellerName: string = '';
   userName: string = '';
   searchResult: Product[] = [];
+  cardItems: number = 0;
   constructor(private router: Router, private product: ProductService) {}
   ngOnInit(): void {
     this.router.events.subscribe((value: any) => {
@@ -24,7 +25,7 @@ export class HeaderComponent {
           let sellerData = sellerStore && JSON.parse(sellerStore);
           this.sellerName = sellerData?.name || '';
           this.menuType = 'seller';
-        }else if(localStorage.getItem('user')) {
+        } else if (localStorage.getItem('user')) {
           let userStore = localStorage.getItem('user');
           let userData = userStore && JSON.parse(userStore);
           this.userName = userData?.name || '';
@@ -33,6 +34,14 @@ export class HeaderComponent {
           this.menuType = 'default';
         }
       }
+    });
+
+    if (localStorage.getItem('cart')) {
+      let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+      this.cardItems = cart.length;
+    }
+    this.product.cardData.subscribe((data) => {
+      this.cardItems = data.length;
     });
   }
   logout() {
@@ -70,7 +79,7 @@ export class HeaderComponent {
     this.router.navigate([`/search/${query}`]);
   }
   redirectToDetails(productId: string) {
-    console.log('productId', productId)
+    console.log('productId', productId);
     this.router.navigate([`/details/${productId}`]);
   }
 }

@@ -18,7 +18,7 @@
         <li><a routerLink="/">Home</a></li>
         <li><a routerLink="/seller-auth">Seller</a></li>
         <li><a routerLink="/user-auth">Login/Sign-up</a></li>
-        <li><a href="#">cart(0)</a></li>
+        <li><a href="#">cart({{cardItems}})</a></li>
     </ul>
     }
     @case ('user') {
@@ -27,7 +27,7 @@
         <li><a routerLink="/seller-auth">Seller</a></li>
         <li><a routerLink="/user-auth">{{userName}}</a></li>
         <li><a routerLink="/user-auth" (click)="userLogout()">Logout</a></li>
-        <li><a href="#">cart(0)</a></li>
+        <li><a href="#">cart {{cardItems}}</a></li>
     </ul>
     }
     @case ('seller') {
