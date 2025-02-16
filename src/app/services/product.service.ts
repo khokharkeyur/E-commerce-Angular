@@ -53,7 +53,6 @@ export class ProductService {
       existingProduct.quantity +=product.quantity;
     } else {
       cart.push(product);
-
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     this.cardData.emit(cart);

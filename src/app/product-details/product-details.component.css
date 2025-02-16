@@ -76,12 +76,12 @@
     color: white;
 }
 
-.button:nth-of-type(2) {
+.remove-card {
     background-color: #dc3545;
     color: white;
 }
 
-.button:nth-of-type(3) {
+.add-cart {
     background-color: #007bff; 
     color: white;
 }

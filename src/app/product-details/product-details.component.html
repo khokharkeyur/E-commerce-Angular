@@ -6,19 +6,23 @@
     <div class="col-sm-6">
         <div class="details">
             <h1>{{productData.name}}</h1>
-        <h3>Price : {{productData.price}}</h3>
-        <div>Color :<h3 [style.backgroundColor]="productData.color" class="product-color"></h3></div>
-        <h6>Category : {{productData.category}}</h6>
-        <h6>Description : {{productData.description}}</h6>
-        <button class="button">Buy Now</button>
-        <button class="button">Remove to Cart</button>
-        <button class="button" (click)="AddToCard()">Add to Cart</button>
-        <div class="quantity-group">
-            <button (click)="handleQuantity('min')">-</button>
-            <input type="text" value="{{productQuantity}}" />
-            <button (click)="handleQuantity('plus')">+</button>
+            <h3>Price : {{productData.price}}</h3>
+            <div>Color :<h3 [style.backgroundColor]="productData.color" class="product-color"></h3>
+            </div>
+            <h6>Category : {{productData.category}}</h6>
+            <h6>Description : {{productData.description}}</h6>
+            <button class="button">Buy Now</button>
+            @if(removeProduct) {
+            <button class="button remove-card">Remove to Cart</button>
+            } @else{
+            <button class="button add-cart" (click)="AddToCard()">Add to Cart</button>
+            }
+            <div class="quantity-group">
+                <button (click)="handleQuantity('min')">-</button>
+                <input type="text" value="{{productQuantity}}" />
+                <button (click)="handleQuantity('plus')">+</button>
 
-        </div>
+            </div>
         </div>
     </div>
 </div>

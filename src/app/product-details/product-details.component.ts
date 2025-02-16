@@ -12,6 +12,7 @@ import { Product } from '../interfases';
 export class ProductDetailsComponent {
   productData: undefined | Product;
   productQuantity: number = 1;
+  removeProduct: boolean = false;
 
   activeRoute = inject(ActivatedRoute);
   product = inject(ProductService);
@@ -20,8 +21,20 @@ export class ProductDetailsComponent {
     let productId = this.activeRoute.snapshot.paramMap.get('productId');
     productId &&
       this.product.getProduct(productId).subscribe((result) => {
-        console.log('result', result);
         this.productData = result;
+        let cartData = localStorage.getItem('cart');
+        if (productId && cartData) {
+          let cart = JSON.parse(cartData);
+          let existingProduct = cart.find(
+            (item: Product) => item.id === productId
+          );
+          if (existingProduct) {
+            console.log('existingProduct', existingProduct);
+            this.removeProduct = true;
+          } else {
+            this.removeProduct = false;
+          }
+        }
       });
   }
   handleQuantity(value: string): void {
