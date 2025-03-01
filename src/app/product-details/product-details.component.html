@@ -13,9 +13,9 @@
             <h6>Description : {{productData.description}}</h6>
             <button class="button">Buy Now</button>
             @if(removeProduct) {
-            <button class="button remove-card">Remove to Cart</button>
+            <button class="button remove-card" (click)="removeToCard(productData.id)">Remove to Cart</button>
             } @else{
-            <button class="button add-cart" (click)="AddToCard()">Add to Cart</button>
+            <button class="button add-cart" (click)="addToCard()">Add to Cart</button>
             }
             <div class="quantity-group">
                 <button (click)="handleQuantity('min')">-</button>

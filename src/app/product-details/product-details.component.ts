@@ -44,12 +44,17 @@ export class ProductDetailsComponent {
       this.productQuantity--;
     }
   }
-  AddToCard() {
+  addToCard() {
     if (this.productData) {
       this.productData.quantity = this.productQuantity;
       if (!localStorage.getItem('user')) {
         this.product.localAddToCart(this.productData);
+        this.removeProduct = true;
       }
     }
+  }
+  removeToCard(productId: string) {
+    this.product.removeToCart(productId);
+    this.removeProduct = false;
   }
 }
