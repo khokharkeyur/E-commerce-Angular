@@ -1,6 +1,6 @@
-import { Product } from './../interfases';
+import { Cart, Product } from './../interfases';
 import { HttpClient } from '@angular/common/http';
-import { EventEmitter, Injectable } from '@angular/core'; 
+import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
@@ -50,7 +50,7 @@ export class ProductService {
 
     let existingProduct = cart.find((item) => item.id === product.id);
     if (existingProduct?.quantity && product?.quantity) {
-      existingProduct.quantity +=product.quantity;
+      existingProduct.quantity += product.quantity;
     } else {
       cart.push(product);
     }
@@ -66,5 +66,8 @@ export class ProductService {
     let newCart = cart.filter((item) => item.id !== productId);
     localStorage.setItem('cart', JSON.stringify(newCart));
     this.cardData.emit(newCart);
+  }
+  addTocard(cartData: Cart) {
+    return this.http.post('http://localhost:3000/cart', cartData);
   }
 }

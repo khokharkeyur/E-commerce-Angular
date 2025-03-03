@@ -124,5 +124,31 @@
       "email": "admin@123",
       "password": "admin@123"
     }
+  ],
+  "cart": [
+    {
+      "id": "11e3",
+      "name": "pen",
+      "price": "10",
+      "color": "blue",
+      "category": "pens",
+      "image": "https://images.unsplash.com/photo-1507955987999-df4864ee80d4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBob25lfGVufDB8fDB8fHww",
+      "description": "goods pens",
+      "quantity": 1,
+      "userId": "2fc4",
+      "productId": "9df2"
+    },
+    {
+      "id": "e2e0",
+      "name": "pen",
+      "price": "10",
+      "color": "blue",
+      "category": "pens",
+      "image": "https://images.unsplash.com/photo-1507955987999-df4864ee80d4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBob25lfGVufDB8fDB8fHww",
+      "description": "goods pens",
+      "quantity": 5,
+      "userId": "2fc4",
+      "productId": "9df2"
+    }
   ]
 }

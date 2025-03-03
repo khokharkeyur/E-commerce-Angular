@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../services/product.service';
-import { Product } from '../interfases';
+import { Cart, Product } from '../interfases';
 
 @Component({
   selector: 'app-product-details',
@@ -50,6 +50,22 @@ export class ProductDetailsComponent {
       if (!localStorage.getItem('user')) {
         this.product.localAddToCart(this.productData);
         this.removeProduct = true;
+      } else {
+        console.log('caling');
+        let user = localStorage.getItem('user');
+        let userId = user && JSON.parse(user).id;
+        let cartData: Cart = {
+          ...this.productData,
+          userId,
+          productId: this.productData.id,
+          quantity: this.productData.quantity ?? 1,
+        };
+        delete cartData.id;
+        console.log('cardData', cartData);
+        this.product.addTocard(cartData).subscribe((result) => {
+          console.log('result', result);
+          this.removeProduct = true;
+        });
       }
     }
   }
