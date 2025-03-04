@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Login, SignUP } from '../interfases';
+import { Cart, Login, Product, SignUP } from '../interfases';
 import { UserService } from '../services/user.service';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-user-auth',
@@ -11,6 +12,7 @@ import { UserService } from '../services/user.service';
 })
 export class UserAuthComponent {
   user = inject(UserService);
+  product = inject(ProductService);
   authError: string = '';
   showLogin: boolean = false;
 
@@ -27,11 +29,43 @@ export class UserAuthComponent {
     this.user.invalidUserAuth.subscribe((response) => {
       if (response) {
         this.authError = 'Invalid email or password';
+      } else {
+        this.localCartToRemote();
       }
     });
   }
 
   openLogin(): void {
     this.showLogin = !this.showLogin;
+  }
+  localCartToRemote(): void {
+    let data = localStorage.getItem('cart');
+    console.log('data', data)
+    if (data) {
+      let cartDataList: Product[] = JSON.parse(data);
+      let user = localStorage.getItem('user');
+      let userId = user && JSON.parse(user).id;
+
+      cartDataList.forEach((product, index) => {
+        let cartData: Cart = {
+          ...product,
+          productId: product.id,
+          userId,
+        };
+        delete cartData.id;
+        setTimeout(() => {
+          this.product.addTocard(cartData).subscribe((response) => {
+            if (response) {
+              console.log(response);
+            }
+          });
+          if (cartDataList.length === index + 1) {
+            localStorage.removeItem('localCard');
+          }
+        }, 500);
+      });
+      // this.user.localCardToRemote(data);
+    }
+    // this.user.localCardToRemote();
   }
 }
