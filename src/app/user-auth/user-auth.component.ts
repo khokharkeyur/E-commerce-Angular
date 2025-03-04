@@ -60,7 +60,7 @@ export class UserAuthComponent {
             }
           });
           if (cartDataList.length === index + 1) {
-            localStorage.removeItem('localCard');
+            localStorage.removeItem('cart');
           }
         }, 500);
       });
