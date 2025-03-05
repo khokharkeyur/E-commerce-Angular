@@ -28,7 +28,6 @@ export class UserService {
         { observe: 'response' }
       )
       .subscribe((response) => {
-        console.log('response', response);
         if (response && response.body?.length) {
           this.invalidUserAuth.emit(false);
           localStorage.setItem('user', JSON.stringify(response.body[0]));
