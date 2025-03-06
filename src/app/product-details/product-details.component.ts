@@ -35,6 +35,23 @@ export class ProductDetailsComponent {
             this.removeProduct = false;
           }
         }
+        let user = localStorage.getItem('user');
+        if (user) {
+          let userId = user && JSON.parse(user).id;
+          this.product.getCartList(userId);
+          this.product.cardData.subscribe((response) => {
+            if (response) {
+              let existingProduct = response.find(
+                (item: Product) => item.productId === productId
+              );
+              if (existingProduct) {
+                this.removeProduct = true;
+              } else {
+                this.removeProduct = false;
+              }
+            }
+          });
+        }
       });
   }
   handleQuantity(value: string): void {
@@ -64,7 +81,10 @@ export class ProductDetailsComponent {
         console.log('cardData', cartData);
         this.product.addTocard(cartData).subscribe((result) => {
           console.log('result', result);
-          this.removeProduct = true;
+          if (result) {
+            this.product.getCartList(userId);
+            this.removeProduct = true;
+          }
         });
       }
     }

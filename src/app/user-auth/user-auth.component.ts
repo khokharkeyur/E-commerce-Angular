@@ -30,7 +30,9 @@ export class UserAuthComponent {
       if (response) {
         this.authError = 'Invalid email or password';
       } else {
-        this.localCartToRemote();
+        setTimeout(() => {
+          this.localCartToRemote();
+        }, 1000);
       }
     });
   }
