@@ -58,7 +58,7 @@ export class ProductService {
     this.cardData.emit(cart);
   }
 
-  removeToCart(productId: string) {
+  removeToCartInLocal(productId: string) {
     let cart: Product[] = [];
     if (localStorage.getItem('cart')) {
       cart = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -77,4 +77,8 @@ export class ProductService {
       this.cardData.emit(response.body || []);
   });
 }
+
+  removeToCart(id: string) {
+    return this.http.delete(`http://localhost:3000/cart/${id}`);
+  }
 }
