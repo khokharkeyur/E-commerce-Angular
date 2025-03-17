@@ -127,18 +127,6 @@
   ],
   "cart": [
     {
-      "id": "acf9",
-      "name": "book",
-      "price": "200",
-      "color": "red",
-      "category": "book",
-      "image": "https://media.istockphoto.com/id/173015527/photo/a-single-red-book-on-a-white-surface.jpg?s=612x612&w=0&k=20&c=AeKmdZvg2_bRY2Yct7odWhZXav8CgDtLMc_5_pjSItY=",
-      "description": "books",
-      "quantity": 1,
-      "productId": "b186",
-      "userId": "2fc4"
-    },
-    {
       "id": "b50d",
       "name": "pen",
       "price": "10",
@@ -161,6 +149,18 @@
       "quantity": 1,
       "userId": "2fc4",
       "productId": "d2c7"
+    },
+    {
+      "id": "b7bb",
+      "name": "book",
+      "price": "200",
+      "color": "red",
+      "category": "book",
+      "image": "https://media.istockphoto.com/id/173015527/photo/a-single-red-book-on-a-white-surface.jpg?s=612x612&w=0&k=20&c=AeKmdZvg2_bRY2Yct7odWhZXav8CgDtLMc_5_pjSItY=",
+      "description": "books",
+      "quantity": 1,
+      "userId": "2fc4",
+      "productId": "b186"
     }
   ]
 }

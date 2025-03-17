@@ -71,7 +71,6 @@ export class ProductService {
     return this.http.post('http://localhost:3000/cart', cartData);
   }
   getCartList(userId: string) {
-    console.log('userId', userId)
     return this.http.get<Product[]>(`http://localhost:3000/cart?userId=${userId}`,{observe: 'response'}).subscribe((response) => {
       console.log('response', response);  
       this.cardData.emit(response.body || []);

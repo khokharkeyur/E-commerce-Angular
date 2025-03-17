@@ -29,13 +29,13 @@ export class HeaderComponent {
           let userStore = localStorage.getItem('user');
           let userData = userStore && JSON.parse(userStore);
           this.userName = userData?.name || '';
+          this.product.getCartList(userData.id);
           this.menuType = 'user';
         } else {
           this.menuType = 'default';
         }
       }
     });
-
     if (localStorage.getItem('cart')) {
       let cart = JSON.parse(localStorage.getItem('cart') || '[]');
       this.cardItems = cart.length;

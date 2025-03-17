@@ -14,7 +14,6 @@ export class UserService {
     this.http
       .post('http://localhost:3000/user', user, { observe: 'response' })
       .subscribe((response) => {
-        console.log('response', response);
         if (response) {
           localStorage.setItem('user', JSON.stringify(response.body));
           this.router.navigate(['/']);
