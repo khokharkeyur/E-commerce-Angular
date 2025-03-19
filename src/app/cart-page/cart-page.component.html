@@ -2,15 +2,17 @@
     <h1>Shopping Cart</h1>
     <div class="cart-container">
         <div class="cart-items">
-            <div class="cart-item">
-                <img src="image" alt="Product Image">
-                <div class="item-info">
-                    <h2>Product Name</h2>
-                    <p>Price: <strong>$300</strong></p>
-                    <p>Quantity: <strong>1</strong></p>
-                </div>
-                <button class="remove-card"><i class="fas fa-trash"></i> Remove</button>
+    @for (cart of cartData; track cart.id) {
+        <div class="cart-item">
+            <img src={{cart.image}} alt="Product Image">
+            <div class="item-info">
+                <h2>{{cart.name}}</h2>
+                <p>Price: <strong>{{cart.price}}</strong></p>
+                <p>Quantity: <strong>{{cart.quantity}}</strong></p>
             </div>
+            <button class="remove-card"><i class="fas fa-trash"></i> Remove</button>
+        </div>
+    }
         </div>
 
         <div class="cart-summary">
