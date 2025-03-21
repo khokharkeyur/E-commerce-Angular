@@ -18,11 +18,11 @@
         <div class="cart-summary">
             <h3>Order Summary</h3>
             <ul>
-                <li><span>Subtotal:</span><span>$300</span></li>
-                <li><span>Tax:</span><span>$30</span></li>
-                <li><span>Delivery:</span><span>$10</span></li>
-                <li><span>Discount:</span><span>-$20</span></li>
-                <li class="total"><span><strong>Total:</strong></span><span><strong>$320</strong></span></li>
+                <li><span>Amount:</span><span>{{priceSummary.price}}</span></li>
+                <li><span>Tax:</span><span>{{priceSummary.tex}}</span></li>
+                <li><span>Delivery:</span><span>{{priceSummary.delivery}}</span></li>
+                <li><span>Discount:</span><span>{{priceSummary.discount}}</span></li>
+                <li class="total"><span><strong>Total:</strong></span><span><strong>{{priceSummary.total}}</strong></span></li>
             </ul>
             <button class="checkout-button">Proceed to Checkout</button>
         </div>
