@@ -2,6 +2,7 @@ import { priceSummary } from './../interfases';
 import { Component, inject } from '@angular/core';
 import { ProductService } from '../services/product.service';
 import { Cart } from '../interfases';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart-page',
@@ -19,6 +20,7 @@ export class CartPageComponent {
     delivery: 0,
   };
   Product = inject(ProductService);
+  router = inject(Router);
   ngOnInit(): void {
     this.Product.currentCart().subscribe((data) => {
       this.cartData = data;
@@ -34,5 +36,8 @@ export class CartPageComponent {
       this.priceSummary.delivery = 100;
       this.priceSummary.total = price + this.priceSummary.tex + this.priceSummary.delivery - this.priceSummary.discount;
     });
+  }
+  checkout() {
+    this.router.navigate(['/checkout']);
   }
 }
