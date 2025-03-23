@@ -1,0 +1,112 @@
+/* General Styles */
+.checkout {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+}
+
+/* Heading Styles */
+.checkout h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.checkout h3 {
+    text-align: center;
+    font-size: 22px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+.common-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.form-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Button Styles */
+.form-button {
+    background: #007bff;
+    color: #fff;
+    padding: 12px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.form-button:hover {
+    background: #0056b3;
+}
+
+/* Message Style */
+.message-p {
+    color: red;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Row Layout */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Column Styles */
+.col-sm-7, .col-sm-5 {
+    padding: 20px;
+}
+
+.col-sm-7 {
+    flex: 1.5;
+    background: #fff;
+}
+
+.col-sm-5 {
+    flex: 1;
+    background: #f8f8f8;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Price and Payment Details */
+.col-sm-5 h3 {
+    font-size: 24px;
+    color: #000;
+}
+
+.col-sm-5 h4 {
+    font-size: 18px;
+    color: #444;
+}
+
+.col-sm-5 b {
+    color: #28a745;
+}
