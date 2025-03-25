@@ -1,4 +1,4 @@
-import { Cart, Product } from './../interfases';
+import { Cart, order, Product } from './../interfases';
 import { HttpClient } from '@angular/common/http';
 import { EventEmitter, Injectable } from '@angular/core';
 
@@ -91,4 +91,7 @@ export class ProductService {
       `http://localhost:3000/cart?userId=${userData.id}`
     );
   }
+  orderNow(data:order){
+    return this.http.post('http://localhost:3000/order',data);
+  } 
 }

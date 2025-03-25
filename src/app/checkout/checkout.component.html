@@ -4,7 +4,7 @@
       <div class="col-sm-7">
         <h3>Add shipping address</h3>
         <p class="message-p">{{orderMsg}}</p>
-        <form #orderData="ngForm" class="common-form">
+        <form #orderData="ngForm" class="common-form" (ngSubmit)="orderNow(orderData.value)">
           <input
             type="text"
             class="form-input"

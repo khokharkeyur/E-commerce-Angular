@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Cart } from '../interfases';
+import { Cart, order } from '../interfases';
 import { ProductService } from '../services/product.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -26,8 +26,24 @@ export class CheckoutComponent {
         }
       });
       this.totalPrice = price + price / 10 + 100 - price / 10;
-
-      console.warn(this.totalPrice);
     });
+  }
+  orderNow(data: { email: string; address: string; contact: string }) {
+    let user = localStorage.getItem('user');
+    let userId = user && JSON.parse(user).id;
+    if (this.totalPrice) {
+      let orderData: order = {
+        ...data,
+        totalPrice: this.totalPrice,
+        userId,
+        id: undefined,
+      };
+      this.product.orderNow(orderData).subscribe((result) => {
+        if (result) {
+          alert('Order Placed Successfully');
+          console.log('result', result);
+        }
+      });
+    }
   }
 }

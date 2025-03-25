@@ -41,3 +41,12 @@ export interface priceSummary {
   tex: number;
   delivery: number;
 }
+
+export interface order {
+  id: string | undefined;
+  email: string;
+  address: string;
+  contact: string;
+  totalPrice: number;
+  userId: string | undefined;
+}
