@@ -42,6 +42,7 @@ export class CheckoutComponent {
         if (result) {
           alert('Order Placed Successfully');
           console.log('result', result);
+          this.router.navigate(['/my-orders'])
         }
       });
     }
