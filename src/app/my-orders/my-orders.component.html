@@ -17,16 +17,17 @@
             <span>Cancel Order</span>
         </div>
     </div>
+    @for (order of orderData; track order.id) {
     <div class="row">
         <div class="col-sm-2">
             <img class="order-img"
                 src="https://www.clipartmax.com/png/middle/210-2106541_track-my-order-beach-volleyball.png" alt="">
         </div>
         <div class="col-sm-2">
-            <span>#1</span>
+            <span>#{{order.id}}</span>
         </div>
         <div class="col-sm-2">
-            <span>1212</span>
+            <span>{{order.totalPrice}}</span>
         </div>
         <div class="col-sm-2">
             <span>In Progress</span>
@@ -34,6 +35,8 @@
         <div class="col-sm-2">
             <button class="form-button">Cancel Order</button>
         </div>
+
     </div>
+    }
 
 </div>
