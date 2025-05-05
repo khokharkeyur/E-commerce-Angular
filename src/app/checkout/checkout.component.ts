@@ -38,11 +38,18 @@ export class CheckoutComponent {
         userId,
         id: undefined,
       };
+      this.cartData?.forEach((item) => {
+        setTimeout(() => {
+          item.id && this.product.deleteCartItem(item.id);
+        }, 500);
+      });
       this.product.orderNow(orderData).subscribe((result) => {
         if (result) {
-          alert('Order Placed Successfully');
-          console.log('result', result);
-          this.router.navigate(['/my-orders'])
+          this.orderMsg = 'Your order has been placed successfully!';
+          setTimeout(() => {
+            this.router.navigate(['/my-orders']);
+            this.orderMsg = undefined;
+          }, 3000);
         }
       });
     }

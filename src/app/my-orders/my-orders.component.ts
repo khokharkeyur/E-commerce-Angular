@@ -14,7 +14,6 @@ export class MyOrdersComponent {
 
   ngOnInit() {
     this.product.orderList().subscribe((result) => {
-      console.log('My Orders', result);
       this.orderData = result;
     });
   }

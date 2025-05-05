@@ -50,6 +50,7 @@
 }
 .message-p {
   color: green;
+  text-align: center;
 }
 .invalid-input {
   color: red;

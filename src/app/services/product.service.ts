@@ -91,12 +91,24 @@ export class ProductService {
       `http://localhost:3000/cart?userId=${userData.id}`
     );
   }
-  orderNow(data:order){
-    return this.http.post('http://localhost:3000/order',data);
-  } 
-  orderList(){
-        let userStore = localStorage.getItem('user');
-        let userData = userStore && JSON.parse(userStore);
-    return this.http.get<order[]>(`http://localhost:3000/order?userId=${userData.id}`);
+  orderNow(data: order) {
+    return this.http.post('http://localhost:3000/order', data);
+  }
+  orderList() {
+    let userStore = localStorage.getItem('user');
+    let userData = userStore && JSON.parse(userStore);
+    return this.http.get<order[]>(
+      `http://localhost:3000/order?userId=${userData.id}`
+    );
+  }
+
+  deleteCartItem(id: string) {
+    return this.http
+      .delete(`http://localhost:3000/cart/${id}`,{observe: 'response'})
+      .subscribe((result) => {
+        if (result) {
+          this.cardData.emit([]);
+        }
+      });
   }
 }
