@@ -111,4 +111,7 @@ export class ProductService {
         }
       });
   }
+  cancelOrder(orderId: string){
+    return this.http.delete(`http://localhost:3000/order/${orderId}`,{observe: 'response'})
+  }
 }
