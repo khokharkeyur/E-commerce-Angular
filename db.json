@@ -125,20 +125,7 @@
       "password": "admin@123"
     }
   ],
-  "cart": [
-    {
-      "id": "78c5",
-      "name": "a12",
-      "price": "20000",
-      "color": "black",
-      "category": "mobile",
-      "image": "https://opsg-img-cdn-gl.heytapimg.com/epb/202407/25/CxzQzFb5VTKGtlT7.png",
-      "description": "good product",
-      "quantity": 1,
-      "userId": "2fc4",
-      "productId": "7932"
-    }
-  ],
+  "cart": [],
   "order": [
     {
       "id": "8d04",
@@ -162,22 +149,6 @@
       "address": "surat",
       "contact": "9484447944",
       "totalPrice": 1110,
-      "userId": "2fc4"
-    },
-    {
-      "id": "f90b",
-      "email": "keyur@gmail.com",
-      "address": "surat",
-      "contact": "9484447944",
-      "totalPrice": 1110,
-      "userId": "2fc4"
-    },
-    {
-      "id": "5a9b",
-      "email": "mayur@123",
-      "address": "surat",
-      "contact": "0948444794",
-      "totalPrice": 20100,
       "userId": "2fc4"
     }
   ]
